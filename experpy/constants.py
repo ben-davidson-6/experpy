@@ -1,2 +1,4 @@
 TAG_PREFIX = 'experpy'
 AUTOCOMMIT_MESSAGE = 'AUTO experpy AUTO'
+MIN = 'MIN'
+MAX = 'MAX'

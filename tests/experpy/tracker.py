@@ -94,7 +94,7 @@ def test_dirty_after_modified(empty_repo: Repo, add_file_to_repo, modify_file, d
     # make the repo clean
     tracking_repo = TrackingRepo(empty_repo.working_dir)
     assert not tracking_repo._is_branch_dirty()
-    
+
     modify_file(f)
 
     assert tracking_repo._is_branch_dirty()
@@ -114,7 +114,7 @@ def test_clean_from_modified(empty_repo: Repo, add_file_to_repo, modify_file, di
     # make the repo clean
     tracking_repo = TrackingRepo(empty_repo.working_dir)
     assert not tracking_repo._is_branch_dirty()
-    
+
     modify_file(f)
 
     assert tracking_repo._is_branch_dirty()
@@ -142,7 +142,7 @@ def test_doesnt_add_ignored_from_existing(empty_repo: Repo, add_file_to_repo, mo
     # make the repo clean
     tracking_repo = TrackingRepo(empty_repo.working_dir)
     assert not tracking_repo._is_branch_dirty()
-    
+
     # show the state of the repo
     display_repo_state(empty_repo)
 
@@ -158,7 +158,7 @@ def test_doesnt_add_ignored_in_same(empty_repo: Repo, add_file_to_repo, modify_f
     # make the repo clean
     tracking_repo = TrackingRepo(empty_repo.working_dir)
     tracking_repo.ensure_clean_branch()
-    
+
     assert len(tracking_repo.head.commit.stats.files.keys()) == 1
 
     # show the state of the repo

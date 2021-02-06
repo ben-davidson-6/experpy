@@ -29,8 +29,7 @@ setup(
     description='An example package. Generated with cookiecutter-pylibrary.',
     author='Ben Davidson',
     author_email='ben.davidson6@googlemail.com',
-    packages=find_packages('experpy'),
-    py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
+    packages=['experpy'],
     include_package_data=True,
     zip_safe=False,
     install_requires=[

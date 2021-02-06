@@ -1,0 +1,3 @@
+add user to tags
+make tags searchable like show me the progress of my experiments
+what to do if there are no commits/repo
