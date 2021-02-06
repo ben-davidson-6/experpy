@@ -10,6 +10,11 @@ from experpy.callback import GitTrackCallback
 
 
 model = build_model() # tf.keras.models.Model
+metric = 'accuracy'
+model.compile(
+    optimizer='adam',
+    loss=loss_fn,
+    metrics=[metric])
 callback = GitTrackCallback(metric, mode='max')
 
 
