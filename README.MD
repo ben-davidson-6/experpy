@@ -20,7 +20,7 @@ model.fit(
     callbacks=[callback])
 
 ```
-You can see what this looks like from me running `example.py` while having the `testing` branch checked out:
+You can see what this looks like from me running `example.py` a few times while having the `testing` branch checked out:
 ```bash
 $ git log --oneline --decorate --graph --all
 
