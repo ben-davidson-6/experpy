@@ -35,6 +35,7 @@ class TrackingMetric:
 
 
 class TrackingRepo(Repo):
+    
     def ensure_clean_branch(self,):
         if self._is_branch_dirty():
             self._track_untracked()
