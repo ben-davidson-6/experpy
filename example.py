@@ -1,6 +1,5 @@
 import tensorflow as tf
 
-from experpy.tracker import TrackingRepo, TrackingMetric, Tracker
 from experpy.callback import GitTrackCallback
 
 # dataset
@@ -20,14 +19,15 @@ model = tf.keras.models.Sequential([
 loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
 
 # build full model
+metric = 'accuracy'
 model.compile(
     optimizer='adam',
     loss=loss_fn,
-    metrics=['accuracy'])
+    metrics=[metric])
 
 
 # will need to build the metric, repo and tracker
-callback = GitTrackCallback('accuracy', mode='max')
+callback = GitTrackCallback(metric, mode='max')
 
 
 model.fit(
