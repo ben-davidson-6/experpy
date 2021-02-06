@@ -5,7 +5,6 @@ Cheap and cheerful way to track tensorflow experiments through git tags with min
 
 ```python
 # example.py
-
 from experpy.callback import GitTrackCallback
 
 
@@ -15,8 +14,15 @@ model.compile(
     optimizer='adam',
     loss=loss_fn,
     metrics=[metric])
-callback = GitTrackCallback(metric, mode='max')
 
+# will find the repo containing example.py and track the
+# metric of interest. 
+# - An automatic commit is made on the current branch 
+#   if there are some untracked files or differences between the 
+#   working directory and last commit
+# - At the end of each epoch a tag with the metric value is updated
+#   with the value pulled from the TF logs
+callback = GitTrackCallback(metric, mode='max')
 
 model.fit(
     x_train,
